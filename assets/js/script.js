@@ -31,12 +31,30 @@ var startBtn = document.getElementById("start-button");
 var timer = document.querySelector("#timer");
 var quizTime = quizQuestions.length * 15;
 timer.textContent = quizTime;
-
 var displayedQuestion = 0;
+
+function beginQuiz() {
+  selectTimer = setInterval(startTimer, 1000);
+  displayQuestion();
+}
+
+function startTimer() {
+  quizTime--;
+  timer.textContent = quizTime;
+}
 
 function displayQuestion() {
   console.log(displayedQuestion);
-  var quizQ = document.createElement("paragraph");
+  var quizQ = document.createElement("p");
   quizQ.textContent = quizQuestions[displayedQuestion].question;
+  var olCreate = document.createElement("ol");
+  for (var i = 0; i < quizQuestions[displayedQuestion].options.length; i++) {
+    var displayedOption = document.createElement("li");
+    displayedOption.textContent = quizQuestions[displayedQuestion].options[i];
+    olCreate.append(displayedOption);
+  }
   questionsDiv.append(quizQ);
+  questionsDiv.append(olCreate);
 }
+
+startBtn.addEventListener("click", beginQuiz);
