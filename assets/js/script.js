@@ -44,6 +44,7 @@ function startTimer() {
 }
 
 function displayQuestion() {
+  startBtn.style.visibility = 'hidden';
   console.log(displayedQuestion);
   var quizQ = document.createElement("p");
   quizQ.textContent = quizQuestions[displayedQuestion].question;

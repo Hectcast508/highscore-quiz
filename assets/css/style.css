@@ -14,6 +14,8 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 250px;
+  align-items: center;
+  flex-direction: column;
 }
 
 .btn {
@@ -26,4 +28,19 @@ main {
 
 .btn:hover {
   background-color: rgba(123, 104, 238, 0.5);
+}
+
+.questions-div p {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.questions-div li {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 3px 0;
+  max-width: 20%;
+  background-color: rgba(123, 104, 238, 1);
+  list-style: none;
+  border-radius: 10px;
 }
